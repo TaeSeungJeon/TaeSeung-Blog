@@ -3,6 +3,7 @@ export interface Post {
     date: string;
     description: string;
     filename: string;
+    category: string; // 카테고리 추가
 }
 
 export interface PostDetail extends Post {
