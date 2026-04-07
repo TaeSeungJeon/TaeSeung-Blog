@@ -1,22 +1,29 @@
-import { Link, useLocation } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
+import type {AuthState} from "../types";
 
 interface HeaderProps {
     isDark: boolean;
     onToggle: () => void;
+    auth: AuthState;
+    onLogout: () => void;
 }
 
 const NAV_ITEMS = [
-    { path: '/posts', label: 'posts' },
-    { path: '/about', label: 'about' },
-    { path: '/guestbook', label: 'guestbook' },
-    { path: '/playground', label: 'playground' },
+    {path: '/about', label: 'about'},
+    {path: '/posts', label: 'posts'},
+    {path: '/playground', label: 'playground'},
+    {path: '/guestbook', label: 'guestbook'},
 ];
 
-function Header({ isDark, onToggle }: HeaderProps) {
+const GITHUB_OAUTH_URL = `https://github.com/login/oauth/authorize?client_id=${import.meta.env.VITE_GITHUB_CLIENT_ID}&scope=read:user,user:email`;
+
+
+function Header({isDark, onToggle, auth, onLogout}: HeaderProps) {
     const location = useLocation();
 
     return (
-        <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+        <header
+            className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
             <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
 
                 {/* 로고 */}
@@ -24,7 +31,7 @@ function Header({ isDark, onToggle }: HeaderProps) {
                     to="/"
                     className="text-lg font-bold text-gray-900 dark:text-white hover:opacity-70 transition-opacity"
                 >
-                    seung
+                    Tae seung
                 </Link>
 
                 {/* 네비게이션 + 토글 */}
@@ -44,6 +51,28 @@ function Header({ isDark, onToggle }: HeaderProps) {
                             </Link>
                         ))}
                     </nav>
+
+                    {/* 로그인/로그아웃 */}
+                    {auth.isLoggedIn ? (
+                        <div className="flex items-center gap-2">
+                            <img
+                                src={auth.avatarUrl}
+                                alt={auth.username}
+                                className="w-6 h-6 rounded-full"
+                            />
+                            <button
+                                onClick={onLogout}
+                                className="text-xs text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+                                로그아웃
+                            </button>
+                        </div>
+                    ) : (
+
+                        <a href={GITHUB_OAUTH_URL}
+                           className="text-xs text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+                            👤
+                        </a>
+                    )}
 
                     {/* 다크모드 토글 */}
                     <button

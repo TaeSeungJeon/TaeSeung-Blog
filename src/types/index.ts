@@ -23,3 +23,9 @@ export interface AuthToken {
     username: string;
     avatarUrl: string;
 }
+
+export interface AuthState {
+    isLoggedIn: boolean;
+    username: string;
+    avatarUrl: string;
+}

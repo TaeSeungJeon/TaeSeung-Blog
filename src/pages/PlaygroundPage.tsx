@@ -20,14 +20,15 @@ const PROJECTS = [
 ];
 
 function PlaygroundPage() {
-    const titleRef = useScrollFadeIn();
-    const listRef = useScrollFadeIn();
+    const title = useScrollFadeIn(0);
+    const list = useScrollFadeIn(150);
 
     return (
         <div className="space-y-12 pt-10">
 
-            {/* 페이지 타이틀 */}
-            <section ref={titleRef} className="scroll-hidden space-y-2">
+            <section
+                ref={title.ref}
+                className={`fade-up ${title.isVisible ? 'visible' : ''} space-y-2`}>
                 <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest">
                     Playground
                 </p>
@@ -39,14 +40,13 @@ function PlaygroundPage() {
                 </p>
             </section>
 
-            {/* 프로젝트 목록 */}
-            <section ref={listRef} className="scroll-hidden grid grid-cols-1 gap-4">
+            <section
+                ref={list.ref}
+                className={`fade-up ${list.isVisible ? 'visible' : ''} grid grid-cols-1 gap-4`}>
                 {PROJECTS.map((project) => (
                     <div
                         key={project.title}
-                        className="group p-6 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200 hover:-translate-y-0.5 space-y-4"
-                    >
-                        {/* 헤더 */}
+                        className="group p-6 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200 hover:-translate-y-0.5 space-y-4">
                         <div className="flex items-start justify-between gap-4">
                             <div className="space-y-1">
                                 <div className="flex items-center gap-2">
@@ -67,23 +67,20 @@ function PlaygroundPage() {
                             </div>
                         </div>
 
-                        {/* 스택 */}
                         <div className="flex flex-wrap gap-2">
                             {project.stack.map((tech) => (
                                 <span
                                     key={tech}
-                                    className="text-xs px-2.5 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
-                                >
+                                    className="text-xs px-2.5 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400">
                   {tech}
                 </span>
                             ))}
                         </div>
 
-                        {/* 링크 */}
                         <div className="flex items-center gap-4 pt-1">
                             {project.github && (
 
-                                <a href={project.github}
+                             <a href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-xs text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
@@ -91,8 +88,7 @@ function PlaygroundPage() {
                                 </a>
                                 )}
                             {project.demo && (
-
-                                <a href={project.demo}
+                              <a href={project.demo}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-xs text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
