@@ -1,22 +1,27 @@
 import useScrollFadeIn from '../hooks/useScrollFadeIn';
 
+const SEUNG_BLOG_IMG = 'blogMain.png'
+const CINEMA_TALK_IMG = 'cinemaTalk.png'
+
 const PROJECTS = [
     {
         title: 'Seung Blog',
         description: 'Spring Boot + React로 만든 개인 포트폴리오 블로그. GitHub API 연동, JWT 인증 구현.',
-        image: './public/blogMain.png',
+        image: SEUNG_BLOG_IMG,
         stack: ['Spring Boot', 'React', 'TypeScript', 'GitHub API', '...'],
         github: 'https://github.com/TaeSeungJeon/seung-backend',
         demo: null,
+        notion: 'https://www.notion.so/Seung-Blog-3345853a763f80f99a3ed9c85453b270',
         status: 'in progress',
     },
     {
         title: 'Cinema-Talk Middle Project',
         description: '대덕 인재개발원 중간 프로젝트 영화 커뮤니티 주제 1조 5인 PL:전태승',
-        image: './public/cinemaTalk.png',
+        image: CINEMA_TALK_IMG,
         stack: ['Java', 'Oracle DB', 'Servlet MVC', 'JSP', 'HTML', 'CSS', 'JavaScript', '...'],
         github: null,
-        demo: 'http://localhost:5173/TaeSeung-Blog/#/posts/MiddlePj-CinemaTalk.md',
+        notion: 'https://www.notion.so/Cinema-Talk-3335853a763f80d3869ded50062845af',
+        demo: 'https://taeseungjeon.github.io/SeungBlog/?code=fc05f54f547124bf1f38#/posts/MiddlePj-CinemaTalk.md',
         status: 'done',
     },
 ];
@@ -42,7 +47,6 @@ function PlaygroundPage() {
                 </p>
             </section>
 
-            {/* grid-cols-2 로 한 줄에 2개씩 */}
             <section
                 ref={list.ref}
                 className={`fade-up ${list.isVisible ? 'visible' : ''} grid grid-cols-2 gap-4`}>
@@ -62,7 +66,8 @@ function PlaygroundPage() {
                             </div>
                         ) : (
                             // 이미지 없을 때 빈 플레이스홀더
-                            <div className="w-full aspect-video bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                            <div
+                                className="w-full aspect-video bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
                                 <span className="text-gray-300 dark:text-gray-600 text-sm">No Image</span>
                             </div>
                         )}
@@ -113,6 +118,14 @@ function PlaygroundPage() {
                                        rel="noopener noreferrer"
                                        className="text-xs text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
                                         Posts ↗
+                                    </a>
+                                )}
+                                {project.notion && (
+                                    <a href={project.notion}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="text-xs text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+                                        notion ↗
                                     </a>
                                 )}
                             </div>

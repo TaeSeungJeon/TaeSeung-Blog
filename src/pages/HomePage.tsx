@@ -11,21 +11,21 @@ const RECENT_PROJECTS = [
         title: '승 블로그 Front-end 맛보기',
         description: 'Spring Boot + React + Vite 승 블로그 등장!',
         stack: ['Spring Boot', 'React', 'GitHub API'],
-        github: 'https://github.com/TaeSeungJeon/TaeSeung-Blog',
+        github: 'https://github.com/TaeSeungJeon/SeungBlog',
         status: 'in progress',
     },
     {
         title: '승 블로그 Back-end 맛보기',
         description: '영업 비밀이라 알려주기 싫은데~~~',
         stack: ['Spring Boot', 'React', 'GitHub API'],
-        github: 'https://github.com/TaeSeungJeon/seung-backend',
+        github: 'https://github.com/TaeSeungJeon/seungBlog-backend',
         status: 'in progress',
     },
     {
         title: '중간 프로젝트 영화 커뮤니티 Cinema-Talk !',
         description: '대덕 인재개발원 영화 커뮤니티 주제 5인 1조 PL:전태승',
         stack: ['Java', 'Oracle DB', 'Servlet MVC', 'JSP', 'HTML', 'CSS', 'JavaScript', '...'],
-        github: 'http://localhost:5173/TaeSeung-Blog/#/posts/MiddlePj-CinemaTalk.md',
+        github: 'https://taeseungjeon.github.io/SeungBlog/#/posts/MiddlePj-CinemaTalk.md',
         demo: null,
         status: 'done',
     },
@@ -34,14 +34,14 @@ const RECENT_PROJECTS = [
 const PIXED_POSTS = [
     {
         title: '서버가 아무것도 저장을 하지 않는다고? WAS & JWT ',
-        description: 'WAS와 JWT의 정의, 사용 방법, 그리고 둘이 만났을 때 어떤 환경이 만들어지는가',
-        link: 'http://localhost:5173/seungBlog-backend/#/posts/WASandJWT.md',
+        description: 'WAS와 JWT의 정의, 사용 방법 그리고 둘이 만났을 때 어떤 환경이 만들어지는가',
+        link: 'https://taeseungjeon.github.io/SeungBlog/#/posts/WASandJWT.md',
         demo: null,
     },
     {
         title: '커넥션 풀, 왜필요한가? 그리고 HikariCP 알고 쓰자! 光',
         description: 'JDBC 학습중이라면 히카리는 듣고 가자!',
-        link: 'http://localhost:5174/seungBlog/#/posts/HikariCP.md',
+        link: 'https://taeseungjeon.github.io/SeungBlog/#/posts/HikariCP.md',
         demo: null,
     },
 ]
@@ -141,7 +141,7 @@ function HomePage() {
                             {[
                                 {label: 'github', href: 'https://github.com/TaeSeungJeon'},
                                 /*{label: ' blog', href: 'https://github.com/TaeSeungJeon/TaeSeung-Blog'},*/
-                                {label: ' velog', href: 'https://velog.io/@xoxo832/posts'},
+                                /*{label: ' velog', href: 'https://velog.io/@xoxo832/posts'},*/
                                 {label: ' Notion', href: 'https://www.notion.so/It-xT-3345853a763f80f99a3ed9c85453b270'},
 
                             ].map((link) => (
@@ -186,34 +186,6 @@ function HomePage() {
                     About me ↗
                 </Link>
             </section>
-{/*
-
-             자기소개 카드
-            <section ref={about.ref} className={`fade-up ${about.isVisible ? 'visible' : ''}`} >
-                <div className="p-6 rounded-xl border border-gray-100 dark:border-gray-800 space-y-4">
-                    <Link to="/about"
-                          className="inline-block text-m text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
-                        About me →
-                    </Link>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Java와 Spring Boot, DB 백엔드를 중심으로, React를 더해 풀스텍 개발을 공부하고 있는
-                        <br/>
-                        직접 만들고, 부수고, 넘어지면서 배우는 걸 좋아하는 슈퍼루키 주니어 개발자 전태승입니다.
-                        <br/>
-                         이 블로그가 그 기록의 공간입니다.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                        {['Java', 'Spring Boot', 'React', 'TypeScript', 'GitHub API'].map((tech) => (
-                            <span key={tech}
-                                className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-                                  {tech}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </section>
-*/}
-
 
             {/* 게시글 픽스 */}
             <section ref={pixedPost.ref} className={`fade-up ${pixedPost.isVisible ? 'visible' : ''} space-y-6`}>

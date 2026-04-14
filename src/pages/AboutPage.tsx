@@ -1,5 +1,7 @@
 import useScrollFadeIn from '../hooks/useScrollFadeIn';
 
+const PROFILE_IMAGE2 = 'me.jpg';
+
 const SKILLS = {
     Backend: ['Java', 'Spring Boot', 'Spring MVC', 'Servlet', 'Oracle DB', '...'],
     Frontend: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'HTML', 'JSP', '...'],
@@ -9,13 +11,13 @@ const SKILLS = {
 const EXPERIENCES = [
     {
         period: '2026.02.28',
-        title: 'Cinema-Talk 영화 커뮤니티 프로젝트 참여'/* 여기 링크 태그 달기 */,
-        description: '중간 프로젝트 1조 PL / 게시판 일체 front, back, db 구현 담당',
+        title: 'Cinema-Talk 영화 커뮤니티 프로젝트 참여',
+        description: '중간 프로젝트 1조 PL / 게시판 front, back, db 구현 담당',
     },
     {
         period: '2025.12 ~ 2026.~07',
-        title: 'React 전자정부 Framework 풀스택 과정 ing',
-        description: '대덕 인재개발원 25년 14기',
+        title: '전자정부 Framework & React(AWS)기반 풀-스택 과정 ing',
+        description: '대덕 인재개발원 25년 14기 / java, spring, ts, node js 등',
     },
 ];
 
@@ -36,7 +38,7 @@ const OTHER = [
     {
         period: '2020 ~ 2024',
         title: '부동산 중개 업무',
-        description: '원, 투룸 임대로 시작해 상가 임대 업무 경험'
+        description: '원, 투룸 임대로 시작해 상가 임대 중개 업무 경험'
     },
 ]
 
@@ -54,14 +56,14 @@ function AboutPage() {
                 ref={intro.ref}
                 className={`fade-up ${intro.isVisible ? 'visible' : ''} space-y-6`}
             >
-                <div className="flex gap-8 items-start">
+                <div className="flex gap-6 items-start">
 
                     {/* 프로필 이미지 */}
                     <div className="shrink-0">
                         <div
-                            className="w-50 h-58 flex items-center justify-center ">
+                            className="w-50 h-75 flex items-center justify-center ">
                             <img
-                                src="public/me.jpg"
+                                src={PROFILE_IMAGE2}
                                 alt="프로필 image"
                                 className="auto"
                             />

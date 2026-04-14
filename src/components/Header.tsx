@@ -1,6 +1,8 @@
 import {Link, useLocation} from 'react-router-dom';
 import type {AuthState} from "../types";
 
+const LOGIN_ICON = 'gitIcon.png';
+
 interface HeaderProps {
     isDark: boolean;
     onToggle: () => void;
@@ -70,7 +72,7 @@ function Header({isDark, onToggle, auth, onLogout}: HeaderProps) {
 
                         <a href={GITHUB_OAUTH_URL}>
                             <img
-                                src="./public/gitpng1.png"
+                                src={LOGIN_ICON}
                                 alt="GitHub 로그인"
                                 className="w-10 h-10"
                             />
