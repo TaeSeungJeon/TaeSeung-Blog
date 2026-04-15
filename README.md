@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 ---
-## 2. Tech Stack
+## Tech Stack
 
 ### IDE
 - IntelliJ 25.3.2
@@ -32,7 +32,7 @@ GitHub OAuth 로그인, 방명록 작성 기능을 포함하고 있습니다.
 
 ---
 
-## 1. Project Overview
+## Project Overview
 
 이 프로젝트는 단순한 정적 소개 페이지가 아니라,  
 **기술 블로그 + 포트폴리오 + 사용자 상호작용 기능**을 함께 담은 웹 애플리케이션입니다.
@@ -47,7 +47,7 @@ GitHub OAuth 로그인, 방명록 작성 기능을 포함하고 있습니다.
 
 ---
 
-## 3. Main Features
+## Main Features
 
 ### 1) Home
 - 최근 게시글 목록 조회
