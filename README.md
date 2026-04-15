@@ -1,5 +1,28 @@
 # React + TypeScript + Vite
 ---
+## 2. Tech Stack
+
+### IDE
+- IntelliJ 25.3.2
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- React Router DOM
+- Tailwind CSS
+- Axios
+- React Markdown
+
+### Authentication
+- GitHub OAuth
+- JWT(LocalStorage 저장)
+
+### Build / Deploy
+- npm
+- gh-pages
+
+---
 
 개인 기술 블로그이자 포트폴리오 사이트의 프론트엔드 프로젝트입니다.  
 React + TypeScript + Vite 기반으로 구현했으며, 게시글 조회, 상세 포스트 렌더링,  
@@ -21,27 +44,6 @@ GitHub OAuth 로그인, 방명록 작성 기능을 포함하고 있습니다.
 - GitHub OAuth 기반 로그인 처리
 - 인증 사용자의 방명록 작성/삭제 기능 제공
 - Markdown 게시글 렌더링 및 코드 하이라이팅 지원
-
----
-
-## 2. Tech Stack
-
-### Frontend
-- React
-- TypeScript
-- Vite
-- React Router DOM
-- Tailwind CSS
-- Axios
-- React Markdown
-
-### Authentication
-- GitHub OAuth
-- JWT(LocalStorage 저장)
-
-### Build / Deploy
-- npm
-- gh-pages
 
 ---
 
